@@ -14,13 +14,13 @@ func DetectLocale() (string, error) {
     out = strings.Replace(out, "Locale", "", -1)
     out = strings.TrimSpace(out)
 
-    id, err := strconv.Atoi(out)
+    id, err := strconv.ParseInt(out, 16, 64)
     if err != nil {
         return "", err
     }
 
     lcid := LCID()
-    locale, err := lcid.ById(id)
+    locale, err := lcid.ById(int(id))
     if err != nil {
         return "", err
     }
