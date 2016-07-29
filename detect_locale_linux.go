@@ -5,7 +5,7 @@ import (
     "errors"
 )
 
-func DetectLocate() (string, error) {
+func DetectLocale() (string, error) {
     out, err := getCommandOutput("locale")
     if err != nil {
         return "", err
