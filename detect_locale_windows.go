@@ -1,5 +1,10 @@
 package go_locale
 
+import (
+    "strings"
+    "strconv"
+)
+
 func DetectLocale() (string, error) {
     out, err := getCommandOutput("wmic", "os", "get", "locale")
     if err != nil {

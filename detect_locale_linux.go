@@ -1,5 +1,10 @@
 package go_locale
 
+import (
+    "strings"
+    "errors"
+)
+
 func DetectLocate() (string, error) {
     out, err := getCommandOutput("locale")
     if err != nil {
